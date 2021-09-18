@@ -7,19 +7,25 @@ from telegram.ext import CommandHandler
 
 
 def speedtest(update, context):
-    speed = sendMessage("Running Speed Test . . . ", context.bot, update)
+    speed = sendMessage("<code>Running speed test...</code>", context.bot, update)
     test = Speedtest()
     test.get_best_server()
     test.download()
     test.upload()
     test.results.share()
     result = test.results.dict()
-    string_speed = f'''
+    string_speed = (
+f'''
+<b>Started at {result['timestamp']}</b>
+
+<b>Client</b>
+<b>Country:</b> <code>{result['client']['country']}</code>
+<b>ISP:</b> <code>{result['client']['isp']}</code>
+
 <b>Server</b>
 <b>Name:</b> <code>{result['server']['name']}</code>
 <b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>
 <b>Sponsor:</b> <code>{result['server']['sponsor']}</code>
-<b>ISP:</b> <code>{result['client']['isp']}</code>
 
 <b>SpeedTest Results</b>
 <b>Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>
@@ -27,7 +33,14 @@ def speedtest(update, context):
 <b>Ping:</b> <code>{result['ping']} ms</code>
 <b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
 '''
-    editMessage(string_speed, speed)
+)
+    deleteMessage(speed)
+    sendLogFile(
+        speed.chat_id,
+        result["share"],
+        caption=string_speed,
+        force_document=False,
+    )
 
 
 def speed_convert(size):

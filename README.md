@@ -1,20 +1,21 @@
-[![Slam](https://telegra.ph/file/db03910496f06094f1f7a.jpg)](https://youtu.be/Pk_TthHfLeE)
+<h1 align="center">Lamphor Mirror Bot</h1>
 
-# Slam Mirror Bot
-![GitHub Repo stars](https://img.shields.io/github/stars/SlamDevs/slam-mirrorbot?color=blue&style=flat)
-![GitHub forks](https://img.shields.io/github/forks/SlamDevs/slam-mirrorbot?color=green&style=flat)
-![GitHub contributors](https://img.shields.io/github/contributors/SlamDevs/slam-mirrorbot?style=flat)
-![GitHub watchers](https://img.shields.io/github/watchers/SlamDevs/slam-mirrorbot)
-![Docker Pulls](https://img.shields.io/docker/pulls/breakdowns/mega-sdk-python?label=Docker%20Pull)
-[![Channel](https://img.shields.io/badge/Join%20Channel-!-red)](https://t.me/SlamMirrorUpdates)
+<p align="center">
+    <a href="https://github.com/mrclfd/lamphor-mirrorbot/stargazers"> <img src="https://img.shields.io/github/stars/mrclfd/lamphor-mirrorbot?color=009688&logo=Riseup&style=flat-square" alt="Stars" /></a>
+    <a href="https://github.com/mrclfd/lamphor-mirrorbot/network/members"> <img src="https://img.shields.io/github/forks/mrclfd/lamphor-mirrorbot?color=009688&logo=Moleculer&logoColor=white&style=flat-square" alt="Forks" /></a>
+    <a href="https://github.com/mrclfd/lamphor-mirrorbot/watchers"> <img src="https://img.shields.io/github/watchers/mrclfd/lamphor-mirrorbot?color=009688&logo=Bilibili&logoColor=white&style=flat-square" alt="Watchers" /></a>
+    <a href="https://github.com/mrclfd/lamphor-mirrorbot/graphs/contributors"> <img src="https://img.shields.io/github/contributors/mrclfd/lamphor-mirrorbot?logo=Draugiem.lv&logoColor=white&color=009688&style=flat-square" alt="Contributors" /></a>
+    <a href="https://github.com/mrclfd/lamphor-mirrorbot"><img src="https://img.shields.io/github/repo-size/mrclfd/lamphor-mirrorbot?color=009688&style=flat-square&logo=Hack The Box&logoColor=white" alt="Repo Size" /></a>
+</p>
 
-**Slam Mirror Bot** is a _multipurpose_ Telegram Bot written in Python for mirroring files on the Internet to our beloved Google Drive. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
+[![Lamphor](https://telegra.ph/file/ca341635ae8e6fa375c3f.jpg)](https://youtu.be/DB6XlFFbN_c)
+
+**Lamphor Mirror Bot** is a _multipurpose_ Telegram Bot written in Python for mirroring files on the Internet to our beloved Google Drive. It's based on [slam-mirrorbot](https://github.com/SlamDevs/slam-mirrorbot) and that (slam-mirrorbot) based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot).
 
 # Features:
 <details>
     <summary><b>Click Here For More Details</b></summary>
 
-## By Slam Devs
 - qBittorrent
 - Size limiting for Torrent/Direct, Tar/Unzip, Mega and clone
 - Stop duplicates for all tasks except for qBittorrent and youtube-dl tasks 
@@ -60,7 +61,7 @@ uptobox.com (Uptobox account must be premium), solidfiles.com
 - Shortener support
 - Custom Filename (Only for direct links, Telegram files and Youtube-dl. Not for Mega links and Torrents)
 - Extracting and downloading password protected index links. See these examples:
-<p><a href="https://telegra.ph/Magneto-Python-Aria---Custom-Filename-Examples-01-20"> <img src="https://img.shields.io/badge/See%20Telegraph-grey?style=for-the-badge&logo=telegraph" width="170""/></a></p>
+<p><a href="https://telegra.ph/Magneto-Python-Aria---Custom-Filename-Examples-01-20"> <img src="https://img.shields.io/badge/See%20Telegraph-grey?style=for-the-badge&logo=telegraph" width="170"/></a></p>
 
 - Extract these filetypes and uploads to Google Drive
 ```
@@ -78,7 +79,7 @@ Deploying is pretty much straight forward and is divided into several steps as f
 
 - Clone this repo:
 ```
-git clone https://github.com/SlamDevs/slam-mirrorbot mirrorbot/
+git clone https://github.com/mrclfd/lamphor-mirrorbot mirrorbot/
 cd mirrorbot
 ```
 
@@ -116,7 +117,7 @@ pip3 install -r requirements-cli.txt
 - Copy your database url, and fill to `DATABASE_URL` in config
 
 **2. Using Heroku PostgreSQL**
-<p><a href="https://dev.to/prisma/how-to-setup-a-free-postgresql-database-on-heroku-1dc1"> <img src="https://img.shields.io/badge/See%20Dev.to-black?style=for-the-badge&logo=dev.to" width="160""/></a></p>
+<p><a href="https://dev.to/prisma/how-to-setup-a-free-postgresql-database-on-heroku-1dc1"> <img src="https://img.shields.io/badge/See%20Dev.to-black?style=for-the-badge&logo=dev.to" width="160"/></a></p>
 
 </details>
 
@@ -145,11 +146,11 @@ Fill up rest of the fields. Meaning of each field is discussed below:
 - `ACCOUNTS_ZIP_URL`: Only if you want to load your Service Account externally from an Index Link. Archive the accounts folder to a zip file. Fill this with the direct link of that file.
 - `TOKEN_PICKLE_URL`: Only if you want to load your **token.pickle** externally from an Index Link. Fill this with the direct link of that file.
 - `MULTI_SEARCH_URL`: To use search/list in multiple TD/folder. Run driveid.py in your terminal and follow it. It will generate a file **drive_folder** when you finish. Upload that file [here](https://gist.github.com/) with the same file name. Open the raw file of that gist, it's URL will be your required config. Check wiki for gist related help. 
-- `DATABASE_URL`: Your Database URL. See [Generate Database](https://github.com/SlamDevs/slam-mirrorbot/tree/master#generate-database) to generate database (**NOTE**: If you use database you can save your Sudo ID permanently using `/addsudo` command).
+- `DATABASE_URL`: Your Database URL. See [Generate Database](#generate-database) to generate database (**NOTE**: If you use database you can save your Sudo ID permanently using `/addsudo` command).
 - `AUTHORIZED_CHATS`: Fill user_id and chat_id (not username) of groups/users you want to authorize. Separate them with space, Examples: `-0123456789 -1122334455 6915401739`.
 - `SUDO_USERS`: Fill user_id (not username) of users whom you want to give sudo permission. Separate them with space, Examples: `0123456789 1122334455 6915401739` (**NOTE**: If you want to save Sudo ID permanently without database, you must fill your Sudo Id here).
 - `IS_TEAM_DRIVE`: Set to `True` if `GDRIVE_FOLDER_ID` is from a Team Drive else `False` or Leave it empty.
-- `USE_SERVICE_ACCOUNTS`: (Leave empty if unsure) Whether to use Service Accounts or not. For this to work see [Using Service Accounts](https://github.com/SlamDevs/slam-mirrorbot#generate-service-accounts-what-is-service-account) section below.
+- `USE_SERVICE_ACCOUNTS`: (Leave empty if unsure) Whether to use Service Accounts or not. For this to work see [Using Service Accounts](#generate-service-accounts-what-is-service-account) section below.
 - `INDEX_URL`: Refer to https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index The URL should not have any trailing '/'
 - `MEGA_API_KEY`: Mega.nz API key to mirror mega.nz links. Get it from [Mega SDK Page](https://mega.nz/sdk)
 - `MEGA_EMAIL_ID`: Your E-Mail ID used to sign up on mega.nz for using premium account (Leave though)
@@ -195,12 +196,12 @@ help - Get Detailed Help
 mirror - Start Mirroring
 tarmirror - Start mirroring and upload as .tar
 zipmirror - Start mirroring and upload as .zip
-unzipmirror - Extract files
+unpack - Extract files
 qbmirror - Start Mirroring using qBittorrent
 qbtarmirror - Start mirroring and upload as .tar using qb
 qbzipmirror - Start mirroring and upload as .zip using qb
-qbunzipmirror - Extract files using qBittorrent
-clone - Copy file/folder to Drive
+qbunpack - Extract files using qBittorrent
+gd - Copy file/folder to Drive
 count - Count file/folder of Drive link
 watch - Mirror Youtube-dl supported link
 tarwatch - Mirror Youtube playlist link and upload as .tar
@@ -250,7 +251,7 @@ sudo docker run -p 80:80 mirror-bot
 ```
 OR
 
-**NOTE**: If you want to use port other than 80, change it in [docker-compose.yml](https://github.com/SlamDevs/slam-mirrorbot/blob/master/docker-compose.yml)
+**NOTE**: If you want to use port other than 80, change it in [docker-compose.yml](docker-compose.yml)
 
 - Using Docker-compose, you can edit and build your image in seconds:
 ```
@@ -285,14 +286,14 @@ sudo docker container prune
 sudo docker image prune -a
 ```
 - Tutorial video from Tortoolkit repo
-<p><a href="https://youtu.be/c8_TU1sPK08"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160""/></a></p>
+<p><a href="https://youtu.be/c8_TU1sPK08"> <img src="https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube" width="160"/></a></p>
 
 ## Deploying on Heroku
 - Deploying on Heroku with Github Workflow
-<p><a href="https://github.com/SlamDevs/slam-mirrorbot/wiki/Deploying-slam-mirrorbot-on-Heroku-with-Github-Workflows"> <img src="https://img.shields.io/badge/Deploy%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="170""/></a></p>
+<p><a href="wiki/Deploying-Lamphor-Mirror-Bot-on-Heroku-with-Github-Workflows"> <img src="https://img.shields.io/badge/Deploy%20Guide-blueviolet?style=for-the-badge&logo=heroku" width="170"/></a></p>
 
 - Deploying on Heroku with heroku-cli and Goorm IDE
-<p><a href="https://telegra.ph/How-to-Deploy-a-Mirror-Bot-to-Heroku-with-CLI-05-06"> <img src="https://img.shields.io/badge/Deploy%20Guide-grey?style=for-the-badge&logo=telegraph" width="170""/></a></p>
+<p><a href="https://telegra.ph/How-to-Deploy-a-Mirror-Bot-to-Heroku-with-CLI-05-06"> <img src="https://img.shields.io/badge/Deploy%20Guide-grey?style=for-the-badge&logo=telegraph" width="170"/></a></p>
 
 # Using Service Accounts for uploading to avoid user rate limit
 For Service Account to work, you must set `USE_SERVICE_ACCOUNTS` = "True" in config file or environment variables.
@@ -358,7 +359,7 @@ python3 gen_sa_accounts.py --download-keys project_id
 python3 add_to_team_drive.py -d SharedTeamDriveSrcID
 ```
 
-# Youtube-dl authentication using [.netrc](https://github.com/SlamDevs/slam-mirrorbot/blob/master/.netrc) file
+# Youtube-dl authentication using [.netrc](.netrc) file
 For using your premium accounts in Youtube-dl or for protected Index Links, edit the netrc file according to following format:
 ```
 machine host login username password my_youtube_password
@@ -372,16 +373,16 @@ Where host is the name of extractor (eg. Youtube, Twitch). Multiple accounts of 
 # Credits
 
 Thanks to:
-- [`out386`](https://github.com/out386) heavily inspired from his Telegram Bot written in Typescript
-- [`Izzy12`](https://github.com/lzzy12) for build up of this bot from scratch
-- [`jaskaranSM`](https://github.com/jaskaranSM) for build up of this bot from scratch
-- [`Dank-del`](https://github.com/Dank-del) for base repo
-- [`magneto261290`](https://github.com/magneto261290) for some features
-- [`SVR666`](https://github.com/SVR666) for some features & fixes
-- [`anasty17`](https://github.com/anasty17) for some features & help
-- [`breakdowns`](https://github.com/breakdowns) for slam-mirrorbot
-- [`zevtyardt`](https://github.com/zevtyardt) for some direct links
-- [`yash-dk`](https://github.com/yash-dk) for implementation of qBittorrent on Python
-- [`xyou365`](https://github.com/xyou365) for Service Accounts script
+- [<kbd>out386</kbd>](https://github.com/out386) heavily inspired from his Telegram Bot written in Typescript
+- [<kbd>Izzy12</kbd>](https://github.com/lzzy12) for build up of this bot from scratch
+- [<kbd>jaskaranSM</kbd>](https://github.com/jaskaranSM) for build up of this bot from scratch
+- [<kbd>Dank-del</kbd>](https://github.com/Dank-del) for base repo
+- [<kbd>magneto261290</kbd>](https://github.com/magneto261290) for some features
+- [<kbd>SVR666</kbd>](https://github.com/SVR666) for some features & fixes
+- [<kbd>anasty17</kbd>](https://github.com/anasty17) for some features & help
+- [<kbd>breakdowns</kbd>](https://github.com/breakdowns) for slam-mirrorbot
+- [<kbd>zevtyardt</kbd>](https://github.com/zevtyardt) for some direct links
+- [<kbd>yash-dk</kbd>](https://github.com/yash-dk) for implementation of qBittorrent on Python
+- [<kbd>xyou365</kbd>](https://github.com/xyou365) for Service Accounts script
 
-And many more people who aren't mentioned here, but can be found in [Contributors](https://github.com/SlamDevs/slam-mirrorbot/graphs/contributors).
+And many more people who aren't mentioned here, but can be found in [Contributors](https://github.com/mrclfd/lamphor-mirrorbot/graphs/contributors).
