@@ -35,13 +35,8 @@ f'''
 '''
 )
     deleteMessage(speed)
-    sendLogFile(
-        document=SpeedTest_Results.png,
-        filename=SpeedTest_Results.name,
-        result["share"],
-        caption=string_speed,
-        force_document=False,
-    )
+    sendPhoto(caption = string_speed,
+              photo = result["share"].name)
 
 
 def speed_convert(size):

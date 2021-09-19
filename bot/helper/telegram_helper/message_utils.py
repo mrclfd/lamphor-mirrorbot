@@ -8,18 +8,26 @@ from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, bot, \
 from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, get_readable_time, MirrorStatus, setInterval
 from telegram.error import TimedOut, BadRequest
 
+def sendPhoto(bot, update: Update):
+    return bot.send_photo(update.message.chat_id,
+                          reply_to_message_id=update.message.message_id,
+                          parse_mode='HTMl')
+
 
 def sendMessage(text: str, bot, update: Update):
     try:
         return bot.send_message(update.message.chat_id,
-                            reply_to_message_id=update.message.message_id,
-                            text=text, allow_sending_without_reply=True,  parse_mode='HTMl')
+                                reply_to_message_id=update.message.message_id,
+                                text=text, allow_sending_without_reply=True,  parse_mode='HTMl')
     except Exception as e:
         LOGGER.error(str(e))
+
+
 def sendMarkup(text: str, bot, update: Update, reply_markup: InlineKeyboardMarkup):
     return bot.send_message(update.message.chat_id,
                             reply_to_message_id=update.message.message_id,
                             text=text, reply_markup=reply_markup, allow_sending_without_reply=True, parse_mode='HTMl')
+
 
 def editMessage(text: str, message: Message, reply_markup=None):
     try:
