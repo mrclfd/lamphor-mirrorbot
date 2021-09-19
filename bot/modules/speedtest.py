@@ -14,12 +14,12 @@ def speedtest(update, context):
     test.upload()
     test.results.share()
     result = test.results.dict()
-    output_msg = (
+    string_speed = (
         f"<b>Started at {result['timestamp']}</b>\n\n"
          "<b>Client</b>\n"
         f"<b>Country:</b> <code>{result['client']['country']}</code>\n"
         f"<b>ISP:</b> <code>{result['client']['isp']}</code>\n\n"
-         "<b>Server</b>"
+         "<b>Server</b>\n"
         f"<b>Name:</b> <code>{result['server']['name']}</code>\n"
         f"<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>\n"
         f"<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>\n\n"
@@ -29,14 +29,12 @@ def speedtest(update, context):
         f"<b>Ping:</b> <code>{result['ping']} ms</code>\n"
         f"<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>\n\n"
     )
-    output = result['share']
-
+    
   # editMessage(string_speed, speed) # SEMEN GRESIK
     deleteMessage(context.bot, speed)
     await message.send_photo(chat_id=message.chat.id,
-                             output,
-                             caption=output_msg)
-    
+                             result['share'],
+                             caption=string_speed)
   # sendPhoto(context.bot, result['share'],
   #           caption=string_speed)
 
