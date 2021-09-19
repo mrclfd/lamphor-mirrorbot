@@ -34,8 +34,7 @@ def speedtest(update, context):
     )
 
     deleteMessage(context.bot, speed)
-    sendPhoto(context.bot, result["share"],
-              caption=result_msg)
+    sendPhoto(context.bot, result["share"])
 
 
 def speed_convert(size):
