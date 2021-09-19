@@ -14,7 +14,6 @@ def speedtest(update, context):
     test.upload()
     test.results.share()
     result = test.results.dict()
-    speed.jpg = result['share']
     string_speed = (
         f"<b>Started at {result['timestamp']}</b>\n\n"
          "<b>Client</b>\n"
@@ -34,7 +33,7 @@ def speedtest(update, context):
   # editMessage(string_speed, speed) # SEMEN GRESIK
     deleteMessage(context.bot, speed)
     await message.send_photo(chat_id=message.chat.id,
-                             "speed.jpg",
+                             f"{result['share']}",
                              caption=string_speed)
   # sendPhoto(context.bot, result['share'],
   #           caption=string_speed)
