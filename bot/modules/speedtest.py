@@ -2,7 +2,7 @@ from speedtest import Speedtest
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot import dispatcher
 from bot.helper.telegram_helper.bot_commands import BotCommands
-from bot.helper.telegram_helper.message_utils import sendMessage, sendSpeedImage, editMessage, deleteMessage, sendPhoto
+from bot.helper.telegram_helper.message_utils import sendMessage, sendSpeedImage, editMessage, deleteMessage
 from telegram.ext import CommandHandler
 
 
