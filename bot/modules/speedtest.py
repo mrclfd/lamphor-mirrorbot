@@ -2,7 +2,7 @@ from speedtest import Speedtest
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot import dispatcher
 from bot.helper.telegram_helper.bot_commands import BotCommands
-from bot.helper.telegram_helper.message_utils import sendMessage, editMessage
+from bot.helper.telegram_helper.message_utils import sendMessage, editMessage, deleteMessage, sendPhoto
 from telegram.ext import CommandHandler
 
 
@@ -34,7 +34,7 @@ f'''
 <b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
 '''
 )
-    
+    deleteMessage(speed)
     sendPhoto(caption = string_speed,
               photo = result["share"].name)
 
