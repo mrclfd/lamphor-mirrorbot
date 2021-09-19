@@ -1,7 +1,7 @@
 class _BotCommands:
     def __init__(self):
         self.StartCommand = 'start'
-        self.MirrorCommand = 'mirror|seed'
+        self.MirrorCommand = 'mirror', 'seed'
         self.UnzipMirrorCommand = 'unpack'
         self.TarMirrorCommand = 'tarmirror'
         self.ZipMirrorCommand = 'zipmirror'
@@ -12,8 +12,8 @@ class _BotCommands:
         self.AuthorizedUsersCommand = 'users'
         self.AuthorizeCommand = 'auth'
         self.UnAuthorizeCommand = 'unauth'
-        self.AddSudoCommand = 'addsudo'
-        self.RmSudoCommand = 'rmsudo'
+        self.AddSudoCommand = 'sudo'
+        self.RmSudoCommand = 'unsudo'
         self.PingCommand = 'ping'
         self.RestartCommand = 'restart'
         self.StatsCommand = 'stats'
