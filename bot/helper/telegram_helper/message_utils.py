@@ -40,7 +40,7 @@ def editMessage(text: str, message: Message, reply_markup=None):
 
 def deleteMessage(bot, message: Message):
     try:
-        bot.delete_message(chat_id=message.chat.id,
+        bot.delete_messages(chat_id=message.chat.id,
                            message_id=message.message_id)
     except Exception as e:
         LOGGER.error(str(e))

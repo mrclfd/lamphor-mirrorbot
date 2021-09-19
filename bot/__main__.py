@@ -89,7 +89,7 @@ def log(update, context):
 help_string_telegraph = f'''<br>
 <b>/{BotCommands.HelpCommand}</b>: To get this message
 <br><br>
-<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
+<b>/{BotCommands.MirrorCommand.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("seed", "")}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
 <br><br>
 <b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
 <br><br>
@@ -105,7 +105,7 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Starts mirroring using qBittorrent and if downloaded file is any archive, extracts it to Google Drive
 <br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Copy file/folder to Google Drive
+<b>/{BotCommands.CloneCommand.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("clone", "")}</b> [drive_url]: Copy file/folder to Google Drive
 <br><br>
 <b>/{BotCommands.CountCommand}</b> [drive_url]: Count file/folder of Google Drive Links
 <br><br>
@@ -151,7 +151,7 @@ help_string = f'''
 
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
 
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+/{BotCommands.SpeedCommand.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("speed", "").replace("st", "")}: Check Internet Speed of the Host
 
 /{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
 
