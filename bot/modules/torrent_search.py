@@ -238,7 +238,7 @@ class TorrentSearch:
             return
 
         query = urlencode(message.text.split(None, 1)[1])
-        self.message = await message.reply_text("Searching")
+        self.message = await message.reply_text("Searching...")
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(f"{self.source}/{query}", timeout=15) as resp:

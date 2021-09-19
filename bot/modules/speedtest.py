@@ -35,7 +35,7 @@ f'''
 '''
 )
     deleteMessage(context.bot, speed)
-    sendPhoto(result["share"],
+    sendPhoto(context.bot, result["share"],
               caption=string_speed)
 
 
