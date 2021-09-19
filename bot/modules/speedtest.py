@@ -1,4 +1,8 @@
+import os
+
 from speedtest import Speedtest
+import wget
+
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot import dispatcher
 from bot.helper.telegram_helper.bot_commands import BotCommands
@@ -7,40 +11,52 @@ from telegram.ext import CommandHandler
 
 
 def speedtest(update, context):
-    speed = sendMessage("<code>Running speed test...</code>", context.bot, update)
+    speed = sendMessage("<code>Running speed test . . .</code>", context.bot, update)
     test = Speedtest()
     test.get_best_server()
+    await message.try_to_edit("<code>Performing download test . . .</code>")
     test.download()
+    await message.try_to_edit("<code>Performing upload test . . .</code>")
     test.upload()
     test.results.share()
     result = test.results.dict()
-    string_speed = (
-        f"<b>Started at {result['timestamp']}</b>\n\n"
-         "<b>Client</b>\n"
-        f"<b>Country:</b> <code>{result['client']['country']}</code>\n"
-        f"<b>ISP:</b> <code>{result['client']['isp']}</code>\n\n"
-         "<b>Server</b>\n"
-        f"<b>Name:</b> <code>{result['server']['name']}</code>\n"
-        f"<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>\n"
-        f"<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>\n\n"
-         "<b>SpeedTest Results</b>\n"
-        f"<b>Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>\n"
-        f"<b>Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>\n"
-        f"<b>Ping:</b> <code>{result['ping']} ms</code>\n"
-        f"<b>ISP Rating:</b> <code>{result['client']['isprating']}</code>\n\n"
-    )
-    
-  # editMessage(string_speed, speed) # SEMEN GRESIK
+    path = (wget.download)(result['share'])
+    string_speed = f"""<b>--Started at {result['timestamp']}--
 
-    deleteMessage(context.bot, speed)
-    sendSpeedImage(context.bot,
-                   result['share'],
-                   caption=string_speed)
-  # await message.send_photo(chat_id=message.chat.id,
-  #                          f"{result['share']}",
-  #                          caption=string_speed)
-  # sendPhoto(context.bot, result['share'],
-  #           caption=string_speed)
+Client:
+
+ISP: <code>{result['client']['isp']}</code>
+ISP Rating: <code>{result['client']['isprating']}</code>
+Country: <code>{result['client']['country']}</code>
+
+Server:
+
+Name: <code>{result['server']['name']}</code>
+Country: <code>{result['server']['country']}, {result['server']['cc']}</code>
+Sponsor: <code>{result['server']['sponsor']}</code>
+Latency: <code>{result['server']['latency']}</code>
+
+Ping: <code>{result['ping']}</code>
+Sent: <code>{humanbytes(result['bytes_sent'])}</code>
+Received: <code>{humanbytes(result['bytes_received'])}</code>
+Upload: <code>{humanbytes(result['upload'] / 8)}/s</code>
+Download: <code>{humanbytes(result['download'] / 8)}/s</code></b>"""
+    await message.client.send_photo(chat_id=message.chat.id,
+                                    photo=path,
+                                    caption=string_speed)
+    os.remove(path)
+# discontinued
+    #
+    # editMessage(string_speed, speed) # SEMEN GRESIK
+    # deleteMessage(context.bot, speed)
+    # sendSpeedImage(context.bot,
+    #                result['share'],
+    #                caption=string_speed)
+    # await message.send_photo(chat_id=message.chat.id,
+    #                          f"{result['share']}",
+    #                          caption=string_speed)
+    # sendPhoto(context.bot, result['share'],
+    #           caption=string_speed)
 
 
 def speed_convert(size):
