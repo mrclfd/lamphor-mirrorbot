@@ -41,7 +41,11 @@ Sent: <code>{result['bytes_sent']}</code>
 Received: <code>{result['bytes_received']}</code>
 Upload: <code>{speed_convert(result['upload'] / 8)}/s</code>
 Download: <code>{speed_convert(result['download'] / 8)}/s</code></b>"""
-    sendPhoto(context.bot, update)
+    sendPhoto(context.bot,
+              update,
+            # property of speedtest.py
+              photo=path,
+              caption=string_speed)
     os.remove(path)
 # discontinued
     # editMessage(string_speed, speed) # SEMEN GRESIK
