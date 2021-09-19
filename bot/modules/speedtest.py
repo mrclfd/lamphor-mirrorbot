@@ -14,18 +14,15 @@ def speedtest(update, context):
     test.upload()
     test.results.share()
     result = test.results.dict()
-    result_msg = (
+    msg = (
         f"<b>Started at {result['timestamp']}</b>\n\n"
-
          "<b>Client</b>\n"
         f"<b>Country:</b> <code>{result['client']['country']}</code>\n"
         f"<b>ISP:</b> <code>{result['client']['isp']}</code>\n\n"
-
          "<b>Server</b>"
         f"<b>Name:</b> <code>{result['server']['name']}</code>\n"
         f"<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>\n"
         f"<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>\n\n"
-
          "<b>SpeedTest Results</b>\n"
         f"<b>Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>\n"
         f"<b>Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>\n"
@@ -35,7 +32,7 @@ def speedtest(update, context):
 
     deleteMessage(context.bot, speed)
     sendPhoto(context.bot, result['share'],
-              caption=result_msg)
+              caption=msg)
 
 
 def speed_convert(size):
