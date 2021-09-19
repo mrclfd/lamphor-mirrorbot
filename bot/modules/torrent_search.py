@@ -336,16 +336,16 @@ torrent_handlers = [
 def searchhelp(update, context):
     help_string = '''
 <b>Torrent Search</b>
-• /nyaasi <i>[search query]</i>
-• /sukebei <i>[search query]</i>
-• /1337x <i>[search query]</i>
-• /piratebay <i>[search query]</i>
-• /tgx <i>[search query]</i>
-• /yts <i>[search query]</i>
-• /eztv <i>[search query]</i>
-• /torlock <i>[search query]</i>
-• /rarbg <i>[search query]</i>
-• /ts <i>[search query]</i>
+    • /nyaasi <i>[search query]</i>
+    • /sukebei <i>[search query]</i>
+    • /1337x <i>[search query]</i>
+    • /piratebay <i>[search query]</i>
+    • /tgx <i>[search query]</i>
+    • /yts <i>[search query]</i>
+    • /eztv <i>[search query]</i>
+    • /torlock <i>[search query]</i>
+    • /rarbg <i>[search query]</i>
+    • /ts <i>[search query]</i>
 '''
     sendMessage(help_string, context.bot, update)
     

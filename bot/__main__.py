@@ -89,7 +89,7 @@ def log(update, context):
 help_string_telegraph = f'''<br>
 <b>/{BotCommands.HelpCommand}</b>: To get this message
 <br><br>
-<b>/{BotCommands.MirrorCommand.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("seed", "")}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
+<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
 <br><br>
 <b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
 <br><br>
@@ -105,7 +105,7 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Starts mirroring using qBittorrent and if downloaded file is any archive, extracts it to Google Drive
 <br><br>
-<b>/{BotCommands.CloneCommand.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("clone", "")}</b> [drive_url]: Copy file/folder to Google Drive
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Copy file/folder to Google Drive
 <br><br>
 <b>/{BotCommands.CountCommand}</b> [drive_url]: Count file/folder of Google Drive Links
 <br><br>
@@ -128,43 +128,32 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Lamphor Mirrorbot Help',
-        author_name='Lamphor Mirrorbot',
-        author_url='https://github.com/mrclfd/lamphor-mirrorbot',
-        html_content=help_string_telegraph,
+        title='Lamphor Mirror Bot Help',
+        author_name='@mrclfd',
+        author_url='https://t.me/MarcelFaraday',
+        html_content=help_string_telegraph.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("seed", "").replace("clone", ""),
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
-
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
-
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
-
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
-
-/{BotCommands.RestartCommand}: Restart the bot
-
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
-/{BotCommands.SpeedCommand.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("speed", "").replace("st", "")}: Check Internet Speed of the Host
-
-/{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
-
-/{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
-
-/{BotCommands.TsHelpCommand}: Get help for Torrent search module
+<b>Lamphor Mirror Bot Help</b>
+    • /{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
+    • /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Only Owner & Sudo)
+    • /{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Only Owner & Sudo)
+    • /{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
+    • /{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
+    • /{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
+    • /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports (Only Owner)
+    • /{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+    • /{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
+    • /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
+    • /{BotCommands.TsHelpCommand}: Get help for Torrent search module
 '''
 
 def bot_help(update, context):
     button = button_build.ButtonMaker()
     button.buildbutton("Other Commands", f"https://telegra.ph/{help}")
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
-    sendMarkup(help_string, context.bot, update, reply_markup)
+    sendMarkup(help_string.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("speed", "").replace("st", ""), context.bot, update, reply_markup)
 
 '''
 botcmds = [
