@@ -46,7 +46,6 @@ Download: <code>{humanbytes(result['download'] / 8)}/s</code></b>"""
               caption=string_speed)
     os.remove(path)
 # discontinued
-    #
     # editMessage(string_speed, speed) # SEMEN GRESIK
     # deleteMessage(context.bot, speed)
     # sendSpeedImage(context.bot,
