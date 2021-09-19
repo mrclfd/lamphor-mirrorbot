@@ -8,12 +8,11 @@ from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, bot, \
 from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, get_readable_time, MirrorStatus, setInterval
 from telegram.error import TimedOut, BadRequest
 
-# discontinued
-    # def sendPhoto(bot, update: Update):
-    #     return bot.send_photo(chat_id=message.chat.id,
-    #                           photo=output.name,
-    #                           reply_to_message_id=update.message.message_id,
-    #                           parse_mode='HTMl')
+def sendPhoto(bot, update: Update):
+    return bot.send_photo(chat_id=message.chat.id,
+                          photo=output.name,
+                          reply_to_message_id=update.message.message_id,
+                          parse_mode='HTMl')
 
 
 def sendMessage(text: str, bot, update: Update):

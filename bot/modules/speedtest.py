@@ -6,7 +6,7 @@ import wget
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot import dispatcher
 from bot.helper.telegram_helper.bot_commands import BotCommands
-from bot.helper.telegram_helper.message_utils import sendMessage, sendSpeedImage, editMessage, deleteMessage
+from bot.helper.telegram_helper.message_utils import sendMessage, editMessage, sendPhoto
 from telegram.ext import CommandHandler
 
 
@@ -41,9 +41,9 @@ Sent: <code>{humanbytes(result['bytes_sent'])}</code>
 Received: <code>{humanbytes(result['bytes_received'])}</code>
 Upload: <code>{humanbytes(result['upload'] / 8)}/s</code>
 Download: <code>{humanbytes(result['download'] / 8)}/s</code></b>"""
-    await message.client.send_photo(chat_id=message.chat.id,
-                                    photo=path,
-                                    caption=string_speed)
+    sendPhoto(chat_id=message.chat.id,
+              photo=path,
+              caption=string_speed)
     os.remove(path)
 # discontinued
     #
