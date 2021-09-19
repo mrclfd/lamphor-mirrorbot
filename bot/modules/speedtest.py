@@ -41,9 +41,7 @@ Sent: <code>{result['bytes_sent']}</code>
 Received: <code>{result['bytes_received']}</code>
 Upload: <code>{speed_convert(result['upload'] / 8)}/s</code>
 Download: <code>{speed_convert(result['download'] / 8)}/s</code></b>"""
-    sendPhoto(chat_id=message.chat.id,
-              photo=path,
-              caption=string_speed)
+    sendPhoto(context.bot)
     os.remove(path)
 # discontinued
     # editMessage(string_speed, speed) # SEMEN GRESIK
