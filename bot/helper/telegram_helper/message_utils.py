@@ -9,7 +9,8 @@ from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_fi
 from telegram.error import TimedOut, BadRequest
 
 def sendPhoto(bot, update: Update):
-    return bot.send_photo(update.message.chat_id,
+    return bot.send_photo(chat_id=message.chat.id,
+                          photo=output.name,
                           reply_to_message_id=update.message.message_id,
                           parse_mode='HTMl')
 
