@@ -38,7 +38,6 @@ f'''
     sendLogFile(
         document=SpeedTest_Results.png,
         filename=SpeedTest_Results.name,
-        speed.chat_id,
         result["share"],
         caption=string_speed,
         force_document=False,
