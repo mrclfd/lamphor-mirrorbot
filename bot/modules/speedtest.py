@@ -37,10 +37,10 @@ Sponsor: <code>{result['server']['sponsor']}</code>
 Latency: <code>{result['server']['latency']}</code>
 
 Ping: <code>{result['ping']}</code>
-Sent: <code>{humanbytes(result['bytes_sent'])}</code>
-Received: <code>{humanbytes(result['bytes_received'])}</code>
-Upload: <code>{humanbytes(result['upload'] / 8)}/s</code>
-Download: <code>{humanbytes(result['download'] / 8)}/s</code></b>"""
+Sent: <code>{result['bytes_sent']}</code>
+Received: <code>{result['bytes_received']}</code>
+Upload: <code>{speed_convert(result['upload'] / 8)}/s</code>
+Download: <code>{speed_convert(result['download'] / 8)}/s</code></b>"""
     sendPhoto(chat_id=message.chat.id,
               photo=path,
               caption=string_speed)
