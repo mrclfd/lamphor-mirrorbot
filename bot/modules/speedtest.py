@@ -1,4 +1,3 @@
-from datetime import datetime
 from speedtest import Speedtest
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot import dispatcher
@@ -16,7 +15,7 @@ def speedtest(update, context):
     test.results.share()
     result = test.results.dict()
     result_msg = (
-        f'<b>Started at {result['timestamp']}</b>\n\n'
+        f'<b>Started at !!!S00N😱!!!</b>\n\n'
 
         f'<b>Client</b>\n'
         f'<b>Country:</b> <code>{result['client']['country']}</code>\n'
