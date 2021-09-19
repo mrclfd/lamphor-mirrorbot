@@ -10,7 +10,6 @@ from telegram.error import TimedOut, BadRequest
 
 def sendPhoto(bot, update: Update):
     return bot.send_photo(chat_id=message.chat.id,
-                          photo=output.name,
                           reply_to_message_id=update.message.message_id,
                           parse_mode='HTMl')
 
