@@ -17,16 +17,16 @@ def speedtest(update, context):
     result_msg = (
         f"<b>Started at {result['timestamp']}</b>\n\n"
 
-        f"<b>Client</b>\n"
+         "<b>Client</b>\n"
         f"<b>Country:</b> <code>{result['client']['country']}</code>\n"
         f"<b>ISP:</b> <code>{result['client']['isp']}</code>\n\n"
 
-        f"<b>Server</b>"
+         "<b>Server</b>"
         f"<b>Name:</b> <code>{result['server']['name']}</code>\n"
         f"<b>Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>\n"
         f"<b>Sponsor:</b> <code>{result['server']['sponsor']}</code>\n\n"
-
-        f"<b>SpeedTest Results</b>\n"
+         
+         "<b>SpeedTest Results</b>\n"
         f"<b>Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>\n"
         f"<b>Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>\n"
         f"<b>Ping:</b> <code>{result['ping']} ms</code>\n"
