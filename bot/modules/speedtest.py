@@ -34,7 +34,7 @@ f'''
 <b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
 '''
 )
-    deleteMessage(context.bot, speed)
+    
     sendPhoto(caption = string_speed,
               photo = result["share"].name)
 
