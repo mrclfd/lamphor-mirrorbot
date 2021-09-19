@@ -36,7 +36,7 @@ f'''
 )
     deleteMessage(context.bot, speed)
     sendPhoto(result["share"],
-              caption = string_speed)
+              caption=string_speed)
 
 
 def speed_convert(size):
