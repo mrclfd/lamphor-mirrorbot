@@ -53,6 +53,11 @@ def sendLogFile(bot, update: Update):
                           reply_to_message_id=update.message.message_id,
                           chat_id=update.message.chat_id)
 
+def sendSpeedImage(bot, update: Update):
+    return bot.send_document(document=speed.jpg, file_name=result.name,
+                             reply_to_message_id=update.message.message_id,
+                             chat_id=message.chat.id)
+
 
 def auto_delete_message(bot, cmd_message: Message, bot_message: Message):
     if AUTO_DELETE_MESSAGE_DURATION != -1:

@@ -2,7 +2,7 @@ from speedtest import Speedtest
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot import dispatcher
 from bot.helper.telegram_helper.bot_commands import BotCommands
-from bot.helper.telegram_helper.message_utils import sendMessage, editMessage, deleteMessage, sendPhoto
+from bot.helper.telegram_helper.message_utils import sendMessage, sendSpeedImage, editMessage, deleteMessage, sendPhoto
 from telegram.ext import CommandHandler
 
 
@@ -31,10 +31,14 @@ def speedtest(update, context):
     )
     
   # editMessage(string_speed, speed) # SEMEN GRESIK
+
     deleteMessage(context.bot, speed)
-    await message.send_photo(chat_id=message.chat.id,
-                             f"{result['share']}",
-                             caption=string_speed)
+    sendSpeedImage(context.bot,
+                   result['share'],
+                   caption=string_speed)
+  # await message.send_photo(chat_id=message.chat.id,
+  #                          f"{result['share']}",
+  #                          caption=string_speed)
   # sendPhoto(context.bot, result['share'],
   #           caption=string_speed)
 
