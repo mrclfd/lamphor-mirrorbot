@@ -14,7 +14,7 @@ def speedtest(update, context):
     test.upload()
     test.results.share()
     result = test.results.dict()
-    msg = (
+    speed_results_msg = (
         f"<b>Started at {result['timestamp']}</b>\n\n"
          "<b>Client</b>\n"
         f"<b>Country:</b> <code>{result['client']['country']}</code>\n"
@@ -31,8 +31,9 @@ def speedtest(update, context):
     )
 
     deleteMessage(context.bot, speed)
-    sendPhoto(context.bot, result['share'],
-              caption=msg)
+    sendMessage(context.bot, speed_results_msg) # yen arep send photo iki hapusen
+  # sendPhoto(context.bot, result['share'],
+  #           caption=msg)
 
 
 def speed_convert(size):
