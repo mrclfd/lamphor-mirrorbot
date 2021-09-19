@@ -31,7 +31,7 @@ def speedtest(update, context):
     )
 
     deleteMessage(context.bot, speed)
-    sendMessage(context.bot, speed_results_msg) # yen arep send photo iki hapusen
+    sendMessage(context.bot, speed_results_msg, update) # yen arep send photo iki hapusen
   # sendPhoto(context.bot, result['share'],
   #           caption=msg)
 
