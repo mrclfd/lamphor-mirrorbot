@@ -36,7 +36,7 @@ def cancel_mirror(update, context):
                 msg1 = "Mirror Already Have Been Cancelled"
                 sendMessage(msg1, context.bot, update)
             else:
-                sendMessage(msg.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("seed", ""), context.bot, update)
+                sendMessage(msg.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace("seed", ""), context.bot, update)
             return
         elif not mirror_message:
             sendMessage(msg, context.bot, update)

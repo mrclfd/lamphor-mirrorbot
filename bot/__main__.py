@@ -131,7 +131,7 @@ help = Telegraph(access_token=telegraph_token).create_page(
         title='Lamphor Mirror Bot Help',
         author_name='@mrclfd',
         author_url='https://t.me/MarcelFaraday',
-        html_content=help_string_telegraph.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("seed", "").replace("clone", ""),
+        html_content=help_string_telegraph.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace("seed", "").replace("clone", ""),
     )["path"]
 
 help_string = f'''
@@ -153,7 +153,7 @@ def bot_help(update, context):
     button = button_build.ButtonMaker()
     button.buildbutton("Other Commands", f"https://telegra.ph/{help}")
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
-    sendMarkup(help_string.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace(" ", "").replace("speed", "").replace("st", ""), context.bot, update, reply_markup)
+    sendMarkup(help_string.replace("(", "").replace(")", "").replace("'", "").replace(",", "").replace("speed", "").replace("st", ""), context.bot, update, reply_markup)
 
 '''
 botcmds = [

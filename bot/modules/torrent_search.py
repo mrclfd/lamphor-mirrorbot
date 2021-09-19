@@ -191,7 +191,7 @@ class TorrentSearch:
         string = self.RESULT_STR.format(**values)
         extra = ""
         if "Files" in values:
-            tmp_str = "➲[{Quality} - {Type} ({Size})]({Torrent}): `{magnet}`"
+            tmp_str = "• [{Quality} - {Type} ({Size})]({Torrent}): `{magnet}`"
             extra += "\n".join(
                 tmp_str.format(**f, magnet=self.format_magnet(f['Magnet']))
                 for f in values['Files']
@@ -199,7 +199,7 @@ class TorrentSearch:
         else:
             magnet = values.get('magnet', values.get('Magnet'))  # Avoid updating source dict
             if magnet:
-                extra += f"➲Magnet: `{self.format_magnet(magnet)}`"
+                extra += f"• Magnet: `{self.format_magnet(magnet)}`"
         if (extra):
             string += "\n" + extra
         return string
@@ -271,61 +271,61 @@ class TorrentSearch:
         await self.update_message()
 
 RESULT_STR_1337 = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "• Name: `{Name}`\n"
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders} || • Leechers: {Leechers}"
 )
 RESULT_STR_PIRATEBAY = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "• Name: `{Name}`\n"
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders} || • Leechers: {Leechers}"
 )
 RESULT_STR_TGX = (
-    "➲Name: `{Name}`\n" 
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "• Name: `{Name}`\n" 
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders} || • Leechers: {Leechers}"
 )
 RESULT_STR_YTS = (
-    "➲Name: `{Name}`\n"
-    "➲Released on: {ReleasedDate}\n"
-    "➲Genre: {Genre}\n"
-    "➲Rating: {Rating}\n"
-    "➲Likes: {Likes}\n"
-    "➲Duration: {Runtime}\n"
-    "➲Language: {Language}"
+    "• Name: `{Name}`\n"
+    "• Released on: {ReleasedDate}\n"
+    "• Genre: {Genre}\n"
+    "• Rating: {Rating}\n"
+    "• Likes: {Likes}\n"
+    "• Duration: {Runtime}\n"
+    "• Language: {Language}"
 )
 RESULT_STR_EZTV = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders}"
+    "• Name: `{Name}`\n"
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders}"
 )
 RESULT_STR_TORLOCK = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "• Name: `{Name}`\n"
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders} || • Leechers: {Leechers}"
 )
 RESULT_STR_RARBG = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "• Name: `{Name}`\n"
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders} || • Leechers: {Leechers}"
 )
 RESULT_STR_ALL = (
-    "➲Name: `{Name}`\n"
-    "➲Size: {Size}\n"
-    "➲Seeders: {Seeders} || ➲Leechers: {Leechers}"
+    "• Name: `{Name}`\n"
+    "• Size: {Size}\n"
+    "• Seeders: {Seeders} || • Leechers: {Leechers}"
 )
 
-TORRENT_API = 'https://api.linkstore.eu.org/api'
+TORRENT_API = 'https://api.mrclfd.repl.co'
 
 torrents_dict = {
-    '1337x': {'source': f"{TORRENT_API}/1337x/", 'result_str': RESULT_STR_1337},
-    'piratebay': {'source': f"{TORRENT_API}/piratebay/", 'result_str': RESULT_STR_PIRATEBAY},
-    'tgx': {'source': f"{TORRENT_API}/tgx/", 'result_str': RESULT_STR_TGX},
-    'yts': {'source': f"{TORRENT_API}/yts/", 'result_str': RESULT_STR_YTS},
-    'eztv': {'source': f"{TORRENT_API}/eztv/", 'result_str': RESULT_STR_EZTV},
-    'torlock': {'source': f"{TORRENT_API}/torlock/", 'result_str': RESULT_STR_TORLOCK},
-    'rarbg': {'source': f"{TORRENT_API}/rarbg/", 'result_str': RESULT_STR_RARBG},
-    'ts': {'source': f"{TORRENT_API}/all/", 'result_str': RESULT_STR_ALL}
+    '1337x': {'source': f"{TORRENT_API}/api/1337x/", 'result_str': RESULT_STR_1337},
+    'piratebay': {'source': f"{TORRENT_API}/api/piratebay/", 'result_str': RESULT_STR_PIRATEBAY},
+    'tgx': {'source': f"{TORRENT_API}/api/tgx/", 'result_str': RESULT_STR_TGX},
+    'yts': {'source': f"{TORRENT_API}/api/yts/", 'result_str': RESULT_STR_YTS},
+    'eztv': {'source': f"{TORRENT_API}/api/eztv/", 'result_str': RESULT_STR_EZTV},
+    'torlock': {'source': f"{TORRENT_API}/api/torlock/", 'result_str': RESULT_STR_TORLOCK},
+    'rarbg': {'source': f"{TORRENT_API}/api/rarbg/", 'result_str': RESULT_STR_RARBG},
+    'ts': {'source': f"{TORRENT_API}/api/all/", 'result_str': RESULT_STR_ALL}
 }
 
 torrent_handlers = [
