@@ -8,10 +8,11 @@ from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, bot, \
 from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, get_readable_time, MirrorStatus, setInterval
 from telegram.error import TimedOut, BadRequest
 
-def sendPhoto(bot, update: Update):
-    return bot.send_photo(chat_id=update.message.chat_id,
-                          reply_to_message_id=update.message.message_id,
-                          parse_mode='HTMl')
+# discontinued ->
+# def sendPhoto(bot, update: Update):
+#     return bot.send_photo(chat_id=update.message.chat_id,
+#                           reply_to_message_id=update.message.message_id,
+#                           parse_mode='HTMl')
 
 
 def sendMessage(text: str, bot, update: Update):
@@ -52,11 +53,11 @@ def sendLogFile(bot, update: Update):
                           reply_to_message_id=update.message.message_id,
                           chat_id=update.message.chat_id)
 
-# discontinued
-    # def sendSpeedImage(bot, update: Update):
-    #     return bot.send_document(document=speed.jpg, file_name=result.name,
-    #                              reply_to_message_id=update.message.message_id,
-    #                              chat_id=message.chat.id)
+# discontinued ->
+# def sendSpeedImage(bot, update: Update):
+#     return bot.send_document(document=speed.jpg, file_name=result.name,
+#                              reply_to_message_id=update.message.message_id,
+#                              chat_id=message.chat.id)
 
 
 def auto_delete_message(bot, cmd_message: Message, bot_message: Message):
