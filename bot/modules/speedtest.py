@@ -21,7 +21,7 @@ def speedtest(update, context):
     test.results.share()
     result = test.results.dict()
     # discontinued -> path = (wget.download)(result['share'])
-    string_speed = f"""<b><i>Started at {result['timestamp']}</i>
+    string_speed = f"""<b><u>Started at {result['timestamp']}</u>
 
 Client:
 
