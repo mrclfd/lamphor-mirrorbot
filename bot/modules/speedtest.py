@@ -35,7 +35,7 @@ from bot.helper.telegram_helper.message_utils import sendMessage, editMessage
 from telegram.ext import CommandHandler
 
 
-def speedtest(update, context):
+def speedtest(client, message, update, context):
     speed = sendMessage("<code>Running speed test . . .</code>", context.bot, update)
     test = Speedtest()
     test.get_best_server()
