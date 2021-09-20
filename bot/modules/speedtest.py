@@ -14,18 +14,14 @@ def speedtest(update, context):
     speed = sendMessage("<code>Running speed test...</code>", context.bot, update)
     test = Speedtest()
     test.get_best_server()
-    editMessage("<code>Performing download test.</code>", speed)
-    editMessage("<code>Performing download test..</code>", speed)
     editMessage("<code>Performing download test...</code>", speed)
     test.download()
-    editMessage("<code>Performing upload test.</code>", speed)
-    editMessage("<code>Performing upload test..</code>", speed)
     editMessage("<code>Performing upload test...</code>", speed)
     test.upload()
     test.results.share()
     result = test.results.dict()
     # discontinued -> path = (wget.download)(result['share'])
-    string_speed = f"""<b>--Started at {result['timestamp']}--
+    string_speed = f"""<b><i>Started at {result['timestamp']}</i>
 
 Client:
 
